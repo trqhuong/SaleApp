@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     username = Column(String(100), nullable=False, unique=True)
     password = Column(String(100), nullable=False)
     avatar = Column(String(100), nullable=True)
-    #active = Column(Boolean, default=True)
+    active = Column(Boolean, default=True)
     user_role = Column(Enum(UserRole), default=UserRole.USER)
 
 
@@ -46,7 +46,7 @@ class Product(db.Model):
 
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()
+        # db.create_all()
 
         u = User(name="admin", username="admin", password=str(hashlib.md5("123456".encode('utf-8')).hexdigest()),
                  avatar="https://res.cloudinary.com/dxxwcby8l/image/upload/v1691062682/tkeflqgroeil781yplxt.jpg",
