@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     username = Column(String(100), nullable=False, unique=True)
     password = Column(String(100), nullable=False)
     avatar = Column(String(100), nullable=True)
-    active = Column(Boolean, default=True)
+    # active = Column(Boolean, default=True)
     user_role = Column(Enum(UserRole), default=UserRole.USER)
 
 
